@@ -1,0 +1,1214 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="玄通閣 Touch of Tao — 香港玄學服務：命理・占卜（八字・大六壬・易經・面相）、法科（符咒・驅邪・和合・招財）、風水（八宅・玄空飛星）。師傅法駿師兄。">
+<meta property="og:title" content="玄通閣 · Touch of Tao">
+<meta property="og:description" content="命理・占卜｜法科｜風水　—　法駿師兄">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#15100C">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%98%AF%3C/text%3E%3C/svg%3E">
+<title>玄通閣 · Touch of Tao</title>
+</head>
+<body>
+<style>
+/* ============================================================
+   玄通閣 · Touch of Tao — landing page
+   Palette: lacquer / bronze / cinnabar / jade / rice-paper
+   Tokens on :root (light defaults) → dark via media query,
+   then data-theme attribute overrides win in both directions.
+   ============================================================ */
+
+:root{
+  /* grounds */
+  --ground:        #F4EDDC;
+  --ground-2:      #EDE4CD;
+  --surface:       #FAF4E6;
+  --line:          #D8CBAA;
+  --line-soft:     #E3D9BD;
+
+  /* ink */
+  --ink:           #2C2114;
+  --ink-soft:      #6E604A;
+  --ink-faint:     #92826A;
+
+  /* metals & minerals */
+  --bronze:        #8A6524;
+  --bronze-strong: #6E4F17;
+  --bronze-dim:    #B49A63;
+  --cinnabar:      #9E3B2E;
+  --cinnabar-line: #C98F7C;
+  --cinnabar-wash: #F0E0D2;
+  --jade:          #41604E;
+  --jade-line:     #93AB98;
+  --jade-wash:     #E2E5D2;
+
+  /* components */
+  --btn-ink:       #F7F1E1;
+  --hero-scrim:    rgba(244,237,220,.78);
+  --halo:          rgba(138,101,36,.10);
+
+  /* canvas (luopan) */
+  --lp-line:       #A78C52;
+  --lp-glyph:      #4C3D25;
+  --lp-accent:     #9E3B2E;
+}
+
+@media (prefers-color-scheme: dark){
+  :root{
+    --ground:        #15100C;
+    --ground-2:      #1C150F;
+    --surface:       #221A12;
+    --line:          #3C2F1E;
+    --line-soft:     #2C2215;
+
+    --ink:           #ECE1CC;
+    --ink-soft:      #B0A184;
+    --ink-faint:     #857659;
+
+    --bronze:        #C9A45C;
+    --bronze-strong: #E2C57F;
+    --bronze-dim:    #8A744C;
+    --cinnabar:      #C05A40;
+    --cinnabar-line: #6E3A28;
+    --cinnabar-wash: #2C1B13;
+    --jade:          #84A28D;
+    --jade-line:     #3C5244;
+    --jade-wash:     #17211A;
+
+    --btn-ink:       #1A130C;
+    --hero-scrim:    rgba(21,16,12,.78);
+    --halo:          rgba(201,164,92,.07);
+
+    --lp-line:       #8F7443;
+    --lp-glyph:      #D9C9A5;
+    --lp-accent:     #C05A40;
+  }
+}
+
+:root[data-theme="dark"]{
+  --ground:        #15100C;
+  --ground-2:      #1C150F;
+  --surface:       #221A12;
+  --line:          #3C2F1E;
+  --line-soft:     #2C2215;
+
+  --ink:           #ECE1CC;
+  --ink-soft:      #B0A184;
+  --ink-faint:     #857659;
+
+  --bronze:        #C9A45C;
+  --bronze-strong: #E2C57F;
+  --bronze-dim:    #8A744C;
+  --cinnabar:      #C05A40;
+  --cinnabar-line: #6E3A28;
+  --cinnabar-wash: #2C1B13;
+  --jade:          #84A28D;
+  --jade-line:     #3C5244;
+  --jade-wash:     #17211A;
+
+  --btn-ink:       #1A130C;
+  --hero-scrim:    rgba(21,16,12,.78);
+  --halo:          rgba(201,164,92,.07);
+
+  --lp-line:       #8F7443;
+  --lp-glyph:      #D9C9A5;
+  --lp-accent:     #C05A40;
+}
+
+:root[data-theme="light"]{
+  --ground:        #F4EDDC;
+  --ground-2:      #EDE4CD;
+  --surface:       #FAF4E6;
+  --line:          #D8CBAA;
+  --line-soft:     #E3D9BD;
+
+  --ink:           #2C2114;
+  --ink-soft:      #6E604A;
+  --ink-faint:     #92826A;
+
+  --bronze:        #8A6524;
+  --bronze-strong: #6E4F17;
+  --bronze-dim:    #B49A63;
+  --cinnabar:      #9E3B2E;
+  --cinnabar-line: #C98F7C;
+  --cinnabar-wash: #F0E0D2;
+  --jade:          #41604E;
+  --jade-line:     #93AB98;
+  --jade-wash:     #E2E5D2;
+
+  --btn-ink:       #F7F1E1;
+  --hero-scrim:    rgba(244,237,220,.78);
+  --halo:          rgba(138,101,36,.10);
+
+  --lp-line:       #A78C52;
+  --lp-glyph:      #4C3D25;
+  --lp-accent:     #9E3B2E;
+}
+
+@media (prefers-reduced-motion: no-preference){
+  :root{ scroll-behavior:smooth; }
+}
+
+/* ---------- base ---------- */
+.tao{
+  --font-display: "Noto Serif TC","Songti TC","Source Han Serif TC","PMingLiU","MingLiU","Yu Mincho",Georgia,serif;
+  --font-latin: Georgia,"Times New Roman",serif;
+  --font-body: "PingFang TC","Microsoft JhengHei UI","Microsoft JhengHei","Noto Sans TC",-apple-system,"Segoe UI",system-ui,sans-serif;
+  --gutter: clamp(1.25rem, 5vw, 2.5rem);
+  --measure: 42rem;
+
+  background: var(--ground);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.9;
+  letter-spacing: .01em;
+  overflow-x: hidden;
+  overflow-x: clip;
+  -webkit-font-smoothing: antialiased;
+}
+.tao *, .tao *::before, .tao *::after{ box-sizing: border-box; }
+.tao :is(h1,h2,h3){
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: .06em;
+  margin: 0;
+  text-wrap: balance;
+}
+.tao p{ margin: 0; }
+.tao a{ color: inherit; }
+.tao :is(a,button):focus-visible{
+  outline: 2px solid var(--bronze);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+.wrap{
+  max-width: var(--measure);
+  margin-inline: auto;
+  position: relative;
+}
+.band{ padding: clamp(3.75rem, 9vw, 6.5rem) var(--gutter); }
+.eyebrow{
+  font-family: var(--font-latin);
+  font-size: .72rem;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: .34em;
+  text-transform: uppercase;
+  color: var(--bronze);
+}
+
+/* ---------- header ---------- */
+.site-head{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem var(--gutter);
+  border-bottom: 1px solid var(--line-soft);
+}
+.brand{
+  display: inline-flex;
+  align-items: center;
+  gap: .7rem;
+  text-decoration: none;
+}
+.brand-seal{
+  display: grid;
+  place-items: center;
+  inline-size: 2.1rem;
+  block-size: 2.1rem;
+  border: 1px solid var(--cinnabar);
+  color: var(--cinnabar);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.15rem;
+  line-height: 1;
+}
+.brand-name{
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.1rem;
+  letter-spacing: .18em;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+.brand-en{
+  font-family: var(--font-latin);
+  font-size: .58rem;
+  letter-spacing: .3em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.head-cta{
+  font-family: var(--font-body);
+  font-size: .85rem;
+  letter-spacing: .12em;
+  text-decoration: none;
+  color: var(--bronze);
+  border: 1px solid var(--bronze-dim);
+  padding: .45em 1.1em;
+  border-radius: 2px;
+  white-space: nowrap;
+}
+.head-cta:hover{ color: var(--bronze-strong); border-color: var(--bronze); }
+
+/* ---------- hero ---------- */
+.hero{
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  min-height: 92vh;
+  min-height: 92svh;
+  padding: clamp(4rem, 10vh, 7rem) var(--gutter);
+  background:
+    radial-gradient(closest-side at 50% 46%, var(--halo), transparent 72%),
+    var(--ground);
+}
+.luopan-wrap{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: min(94vmin, 47rem);
+  aspect-ratio: 1 / 1;
+}
+.luopan-wrap canvas{
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.hero-lockup{
+  position: relative;
+  text-align: center;
+  padding: clamp(1.5rem, 5vw, 3rem);
+  background: radial-gradient(closest-side, var(--hero-scrim) 42%, transparent 100%);
+}
+.hero-kicker{
+  font-size: .82rem;
+  letter-spacing: .3em;
+  color: var(--ink-soft);
+  padding-left: .3em; /* balance trailing letter-space */
+}
+.hero-title{
+  font-size: clamp(3.1rem, 13vw, 5.6rem);
+  letter-spacing: .16em;
+  padding-left: .16em;
+  margin-top: .35em;
+  color: var(--ink);
+}
+.hero-en{
+  font-family: var(--font-latin);
+  font-size: clamp(.78rem, 2.4vw, .95rem);
+  letter-spacing: .52em;
+  padding-left: .52em;
+  text-transform: uppercase;
+  color: var(--bronze);
+  margin-top: .9em;
+}
+.hero-sub{
+  margin-top: 1.8em;
+  color: var(--ink-soft);
+  font-size: .98rem;
+  max-width: 30em;
+  margin-inline: auto;
+}
+.hero-actions{
+  margin-top: 2.4rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .9rem;
+  justify-content: center;
+}
+.btn{
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: .95rem;
+  letter-spacing: .14em;
+  text-decoration: none;
+  padding: .8em 1.9em;
+  border-radius: 2px;
+  border: 1px solid transparent;
+}
+.btn-primary{
+  background: var(--bronze);
+  color: var(--btn-ink);
+}
+.btn-primary:hover{ background: var(--bronze-strong); }
+.btn-ghost{
+  border-color: var(--bronze-dim);
+  color: var(--ink);
+}
+.btn-ghost:hover{ border-color: var(--bronze); color: var(--bronze); }
+
+/* ---------- lead / index ---------- */
+.lead{ border-top: 1px solid var(--line-soft); }
+.lead h2{ font-size: clamp(1.6rem, 4.5vw, 2.05rem); margin-top: .6rem; }
+.lead-copy{
+  margin-top: 1.2rem;
+  color: var(--ink-soft);
+  max-width: 36em;
+}
+.cat-index{
+  list-style: none;
+  margin: 2.6rem 0 0;
+  padding: 0;
+  border-top: 1px solid var(--line);
+}
+.cat-index li{ border-bottom: 1px solid var(--line); }
+.cat-index a{
+  display: grid;
+  grid-template-columns: 2.6rem 1fr auto;
+  align-items: baseline;
+  gap: .9rem;
+  padding: 1rem .2rem;
+  text-decoration: none;
+}
+.cat-index a:hover .idx-name{ color: var(--idx-accent, var(--bronze)); }
+.idx-num{
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  color: var(--idx-accent, var(--bronze));
+}
+.idx-name{
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  letter-spacing: .08em;
+}
+.idx-sub{
+  font-size: .8rem;
+  letter-spacing: .18em;
+  color: var(--ink-faint);
+}
+.idx-1{ --idx-accent: var(--bronze); }
+.idx-2{ --idx-accent: var(--cinnabar); }
+.idx-3{ --idx-accent: var(--jade); }
+
+/* ---------- category sections ---------- */
+.cat{ scroll-margin-top: 1.5rem; }
+.cat-2{ background: var(--ground-2); }
+.cat-head{ position: relative; padding-right: 5rem; }
+.cat-num{
+  position: absolute;
+  right: -0.5rem;
+  top: -2.2rem;
+  font-family: var(--font-display);
+  font-size: clamp(5.5rem, 16vw, 7.5rem);
+  line-height: 1;
+  color: var(--cat-accent, var(--bronze));
+  opacity: .1;
+  user-select: none;
+  pointer-events: none;
+}
+.cat-eyebrow{ color: var(--cat-accent, var(--bronze)); }
+.cat h2{
+  font-size: clamp(1.7rem, 5vw, 2.15rem);
+  margin-top: .55rem;
+}
+.cat-sub{
+  margin-top: 1rem;
+  color: var(--ink-soft);
+  max-width: 34em;
+}
+.cat-1{ --cat-accent: var(--bronze); }
+.cat-2{ --cat-accent: var(--cinnabar); }
+.cat-3{ --cat-accent: var(--jade); }
+
+.cat-vert{
+  display: none;
+  position: absolute;
+  left: -5.2rem;
+  top: .4rem;
+  writing-mode: vertical-rl;
+  font-family: var(--font-display);
+  font-size: .82rem;
+  letter-spacing: .5em;
+  color: var(--cat-accent, var(--bronze));
+  border-left: 1px solid var(--line);
+  padding-left: .8rem;
+  opacity: .85;
+}
+@media (min-width: 1080px){
+  .cat-vert{ display: block; }
+}
+
+/* service rows */
+.svc-list{
+  list-style: none;
+  margin: 2.4rem 0 0;
+  padding: 0;
+}
+.svc{
+  padding: 1.35rem .1rem;
+  border-top: 1px solid var(--line);
+}
+.svc:first-child{ border-top: 0; padding-top: .4rem; }
+@media (min-width: 620px){
+  .svc{
+    display: grid;
+    grid-template-columns: 9.5rem 1fr;
+    gap: 1.4rem;
+    align-items: start;
+  }
+}
+.svc-name{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: .55rem;
+}
+.svc-name h3{
+  font-size: 1.28rem;
+  letter-spacing: .1em;
+}
+.svc-desc{
+  color: var(--ink-soft);
+  font-size: .96rem;
+  margin-top: .35rem;
+}
+@media (min-width: 620px){
+  .svc-desc{ margin-top: .3rem; }
+}
+.tag{
+  display: inline-block;
+  font-size: .7rem;
+  letter-spacing: .16em;
+  line-height: 1;
+  padding: .42em .7em .38em;
+  border-radius: 2px;
+  white-space: nowrap;
+}
+.tag-feat{
+  color: var(--cinnabar);
+  border: 1px solid var(--cinnabar);
+  background: var(--cinnabar-wash);
+}
+.tag-cross{
+  color: var(--jade);
+  border: 1px solid var(--jade-line);
+  background: var(--jade-wash);
+}
+
+/* featured: 大六壬 */
+.svc-feat{
+  position: relative;
+  border-top: 0;
+  border: 1px solid var(--cinnabar-line);
+  background: var(--surface);
+  padding: 1.5rem 1.4rem;
+  margin-block: .9rem;
+}
+.svc-feat + .svc{ border-top: 0; }
+.svc-feat::before,
+.svc-feat::after{
+  content: "";
+  position: absolute;
+  inline-size: .75rem;
+  block-size: .75rem;
+  pointer-events: none;
+}
+.svc-feat::before{
+  top: -1px; left: -1px;
+  border-top: 2px solid var(--cinnabar);
+  border-left: 2px solid var(--cinnabar);
+}
+.svc-feat::after{
+  bottom: -1px; right: -1px;
+  border-bottom: 2px solid var(--cinnabar);
+  border-right: 2px solid var(--cinnabar);
+}
+.svc-feat .svc-name h3{ font-size: 1.5rem; }
+.svc-feat .svc-desc{ color: var(--ink); }
+.svc-feat .svc-desc em{
+  font-style: normal;
+  color: var(--ink-soft);
+  display: block;
+  font-size: .88rem;
+  margin-top: .5em;
+}
+
+/* ---------- bridge: 法科 × 風水 ---------- */
+.bridge{ padding-block: clamp(2.5rem, 6vw, 4rem); }
+.bridge-inner{
+  position: relative;
+  padding-left: 2.6rem;
+}
+.bridge-inner::before{
+  content: "";
+  position: absolute;
+  left: .8rem;
+  top: -8rem;
+  bottom: -8rem;
+  width: 1px;
+  background: linear-gradient(to bottom,
+    transparent,
+    var(--bronze-dim) 14%,
+    var(--bronze-dim) 86%,
+    transparent);
+}
+.bridge-node{
+  position: absolute;
+  left: .8rem;
+  top: .1rem;
+  inline-size: 2.15rem;
+  block-size: 2.15rem;
+  transform: translateX(-50%) rotate(45deg);
+  border: 1px solid var(--cinnabar);
+  background: var(--ground);
+  display: grid;
+  place-items: center;
+}
+.bridge-node b{
+  transform: rotate(-45deg);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: .95rem;
+  color: var(--cinnabar);
+}
+.bridge h2{
+  font-size: clamp(1.35rem, 4vw, 1.7rem);
+  margin-top: .55rem;
+}
+.bridge-lead{
+  margin-top: 1rem;
+  color: var(--ink-soft);
+  max-width: 33em;
+  font-size: .96rem;
+}
+.bridge-pairs{
+  margin-top: 2rem;
+  display: grid;
+  gap: 1.1rem;
+}
+.pair{
+  border: 1px solid var(--line);
+  background: var(--surface);
+  padding: 1.2rem 1.3rem 1.3rem;
+}
+.pair-heads{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .9rem;
+}
+.pair-x{
+  font-family: var(--font-latin);
+  font-size: 1.3rem;
+  color: var(--bronze);
+  line-height: 1;
+}
+.pair-side{
+  font-family: var(--font-display);
+  font-size: 1.12rem;
+  letter-spacing: .08em;
+  display: inline-flex;
+  align-items: baseline;
+  gap: .55em;
+  padding-bottom: .3em;
+}
+.pair-side small{
+  font-family: var(--font-body);
+  font-size: .68rem;
+  letter-spacing: .2em;
+  color: var(--ink-faint);
+}
+.side-fa{ border-bottom: 2px solid var(--cinnabar); }
+.side-fs{ border-bottom: 2px solid var(--jade); }
+.pair-note{
+  margin-top: .85rem;
+  font-size: .9rem;
+  color: var(--ink-soft);
+}
+
+/* ---------- about ---------- */
+.about{ background: var(--ground-2); }
+.about h2{ font-size: clamp(1.7rem, 5vw, 2.15rem); margin-top: .55rem; }
+.about-copy{
+  margin-top: 1.5rem;
+  display: grid;
+  gap: 1.1rem;
+  max-width: 36em;
+  color: var(--ink-soft);
+}
+.about-copy strong{ color: var(--ink); font-weight: 600; }
+.about-motto{
+  margin-top: 2.2rem;
+  padding-left: 1.2rem;
+  border-left: 2px solid var(--bronze);
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  letter-spacing: .12em;
+  color: var(--ink);
+}
+
+/* ---------- cta ---------- */
+.cta-panel{
+  border: 1px solid var(--bronze-dim);
+  outline: 1px solid var(--line);
+  outline-offset: 5px;
+  background: var(--surface);
+  padding: clamp(1.8rem, 5vw, 2.8rem);
+}
+.cta-panel h2{ font-size: clamp(1.6rem, 5vw, 2rem); margin-top: .55rem; }
+.cta-copy{
+  margin-top: 1.1rem;
+  color: var(--ink-soft);
+  max-width: 32em;
+}
+.cta-actions{
+  margin-top: 1.9rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.1rem;
+}
+.cta-handle{
+  font-family: var(--font-latin);
+  font-size: .85rem;
+  letter-spacing: .18em;
+  color: var(--ink-faint);
+}
+.cta-handle a{
+  color: var(--bronze);
+  text-decoration: none;
+  border-bottom: 1px solid var(--bronze-dim);
+}
+.cta-handle a:hover{ color: var(--bronze-strong); border-color: var(--bronze); }
+
+/* ---------- footer ---------- */
+.site-foot{
+  border-top: 1px solid var(--line-soft);
+  padding: 2.6rem var(--gutter) 3rem;
+}
+.foot-grid{
+  max-width: var(--measure);
+  margin-inline: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1.6rem 2.5rem;
+}
+.foot-brand{
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  letter-spacing: .16em;
+}
+.foot-brand small{
+  display: block;
+  font-family: var(--font-latin);
+  font-size: .62rem;
+  letter-spacing: .3em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-top: .4em;
+}
+.foot-meta{
+  font-size: .82rem;
+  color: var(--ink-soft);
+  display: grid;
+  gap: .45rem;
+}
+.foot-meta a{
+  color: var(--bronze);
+  text-decoration: none;
+  border-bottom: 1px solid var(--bronze-dim);
+}
+.foot-meta a:hover{ color: var(--bronze-strong); border-color: var(--bronze); }
+.foot-fine{
+  max-width: var(--measure);
+  margin: 2.2rem auto 0;
+  padding-top: 1.4rem;
+  border-top: 1px solid var(--line-soft);
+  font-size: .74rem;
+  letter-spacing: .04em;
+  color: var(--ink-faint);
+  font-variant-numeric: tabular-nums;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem 2rem;
+  justify-content: space-between;
+}
+
+/* ---------- scroll reveal (motion-gated) ---------- */
+@media (prefers-reduced-motion: no-preference){
+  .tao.tao-anim .reveal{
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity .7s ease, transform .7s ease;
+    transition-delay: calc(var(--i, 0) * 70ms);
+  }
+  .tao.tao-anim .reveal.is-in{
+    opacity: 1;
+    transform: none;
+  }
+}
+</style>
+
+<div class="tao" lang="zh-Hant-HK" id="top">
+
+  <header class="site-head">
+    <a class="brand" href="#top" aria-label="玄通閣 Touch of Tao — 回到頁首">
+      <span class="brand-seal" aria-hidden="true">玄</span>
+      <span class="brand-name">玄通閣<span class="brand-en">Touch of Tao</span></span>
+    </a>
+    <a class="head-cta" href="https://www.instagram.com/touch_of_tao" target="_blank" rel="noopener">IG 預約</a>
+  </header>
+
+  <section class="hero" aria-label="玄通閣 Touch of Tao — 大六壬・命理・法科・風水">
+    <div class="luopan-wrap" aria-hidden="true">
+      <canvas id="luopan" role="img" aria-label="裝飾用羅盤圖案：天干地支與八卦環，緩緩旋轉"></canvas>
+    </div>
+    <div class="hero-lockup">
+      <p class="hero-kicker">香港・玄學問事</p>
+      <h1 class="hero-title">玄通閣</h1>
+      <p class="hero-en">Touch of Tao</p>
+      <p class="hero-sub">大六壬起課問事——命理、法科、風水，三門並立，皆由法駿師兄親自主理。</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="https://www.instagram.com/touch_of_tao" target="_blank" rel="noopener">私訊 IG 預約</a>
+        <a class="btn btn-ghost" href="#services">三大門類</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="band lead" id="services" aria-labelledby="lead-title">
+    <div class="wrap reveal">
+      <p class="eyebrow">Services · 三門</p>
+      <h2 id="lead-title">服務門類</h2>
+      <p class="lead-copy">玄通閣之術，分為三門：命理占卜以「斷」，法科以「行」，風水以「安」。三門各司其職，亦可交叉並用——以下各項，皆由師兄親自主理。</p>
+      <ol class="cat-index">
+        <li class="idx-1"><a href="#cat-mingli"><span class="idx-num" aria-hidden="true">壹</span><span class="idx-name">命理・占卜</span><span class="idx-sub">推命問事</span></a></li>
+        <li class="idx-2"><a href="#cat-fa"><span class="idx-num" aria-hidden="true">貳</span><span class="idx-name">法科</span><span class="idx-sub">符法科儀</span></a></li>
+        <li class="idx-3"><a href="#cat-fengshui"><span class="idx-num" aria-hidden="true">叁</span><span class="idx-name">風水</span><span class="idx-sub">陽宅堪輿</span></a></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- 門類一 · 命理・占卜 -->
+  <section class="band cat cat-1" id="cat-mingli" aria-labelledby="mingli-title">
+    <div class="wrap">
+      <span class="cat-vert" aria-hidden="true">推命問事</span>
+      <div class="cat-head reveal">
+        <span class="cat-num" aria-hidden="true">壹</span>
+        <p class="eyebrow cat-eyebrow">門類一 · Destiny &amp; Divination</p>
+        <h2 id="mingli-title">命理・占卜</h2>
+        <p class="cat-sub">推命問事——以生辰、課象、卦象與面相斷事，知命而後謀事。</p>
+      </div>
+      <ul class="svc-list">
+        <li class="svc reveal" style="--i:0">
+          <div class="svc-name"><h3>八字算命</h3></div>
+          <div class="svc-desc"><p>以生辰八字推算命格、大運流年——論性情、事業、姻緣、財運之走勢。</p></div>
+        </li>
+        <li class="svc svc-feat reveal" style="--i:1">
+          <div class="svc-name">
+            <h3>大六壬</h3>
+            <span class="tag tag-feat">招牌・師兄專長</span>
+          </div>
+          <div class="svc-desc">
+            <p>起課問事，吉凶決斷。大六壬為古三式之一——以正時起課，斷人事之成敗、行藏、去留。<em>問事之精微處，正是師兄深研所在。</em></p>
+          </div>
+        </li>
+        <li class="svc reveal" style="--i:2">
+          <div class="svc-name"><h3>易經占卜</h3></div>
+          <div class="svc-desc"><p>卜卦問事，決疑解惑——事有猶豫未決，可就一事起卦，觀其吉凶進退。</p></div>
+        </li>
+        <li class="svc reveal" style="--i:3">
+          <div class="svc-name"><h3>面相</h3></div>
+          <div class="svc-desc"><p>觀相知命——察五官、氣色，論當下運勢與人事。</p></div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 門類二 · 法科 -->
+  <section class="band cat cat-2" id="cat-fa" aria-labelledby="fa-title">
+    <div class="wrap">
+      <span class="cat-vert" aria-hidden="true">符法科儀</span>
+      <div class="cat-head reveal">
+        <span class="cat-num" aria-hidden="true">貳</span>
+        <p class="eyebrow cat-eyebrow">門類二 · Talismanic Rites</p>
+        <h2 id="fa-title">法科</h2>
+        <p class="cat-sub">符法科儀——符箓法事，科儀行持，以法濟事、趨吉避凶。</p>
+      </div>
+      <ul class="svc-list">
+        <li class="svc reveal" style="--i:0">
+          <div class="svc-name"><h3>符咒</h3></div>
+          <div class="svc-desc"><p>開光符箓，趨吉避凶——依事求符，經科儀開光而後付用。</p></div>
+        </li>
+        <li class="svc reveal" style="--i:1">
+          <div class="svc-name"><h3>驅邪</h3></div>
+          <div class="svc-desc"><p>清淨化解，退煞驅穢——宅舍不寧、身有沖犯，以法事清淨之。</p></div>
+        </li>
+        <li class="svc reveal" style="--i:2">
+          <div class="svc-name">
+            <h3>和合</h3>
+            <span class="tag tag-cross">可交叉風水</span>
+          </div>
+          <div class="svc-desc"><p>感情復合、姻緣和合——修補情緣，以法事助合。</p></div>
+        </li>
+        <li class="svc reveal" style="--i:3">
+          <div class="svc-name">
+            <h3>招財</h3>
+            <span class="tag tag-cross">可交叉風水</span>
+          </div>
+          <div class="svc-desc"><p>招財納福、生意興隆——正財偏財、店舖生意，以法催旺。</p></div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 交叉應用：法科 × 風水 -->
+  <aside class="band bridge" aria-labelledby="bridge-title">
+    <div class="wrap">
+      <div class="bridge-inner reveal">
+        <span class="bridge-node" aria-hidden="true"><b>交</b></span>
+        <p class="eyebrow">Cross Application</p>
+        <h2 id="bridge-title">交叉應用——法科 × 風水</h2>
+        <p class="bridge-lead">法科與風水，可合而行之：先以風水堪定屋中方位，再以法科加持其位——佈局引氣，法事催旺，相輔而行。</p>
+        <div class="bridge-pairs">
+          <div class="pair">
+            <div class="pair-heads">
+              <span class="pair-side side-fa">招財符法<small>法科</small></span>
+              <span class="pair-x" aria-hidden="true">×</span>
+              <span class="pair-side side-fs">財位佈局<small>風水</small></span>
+            </div>
+            <p class="pair-note">堪定屋中財位，配以招財符法加持——招財納福，佈局與法事雙管齊下。</p>
+          </div>
+          <div class="pair">
+            <div class="pair-heads">
+              <span class="pair-side side-fa">和合法事<small>法科</small></span>
+              <span class="pair-x" aria-hidden="true">×</span>
+              <span class="pair-side side-fs">桃花位佈局<small>風水</small></span>
+            </div>
+            <p class="pair-note">桃花位既定，配以和合法事——姻緣感情，內外並進。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- 門類三 · 風水 -->
+  <section class="band cat cat-3" id="cat-fengshui" aria-labelledby="fengshui-title">
+    <div class="wrap">
+      <span class="cat-vert" aria-hidden="true">陽宅堪輿</span>
+      <div class="cat-head reveal">
+        <span class="cat-num" aria-hidden="true">叁</span>
+        <p class="eyebrow cat-eyebrow">門類三 · Feng Shui</p>
+        <h2 id="fengshui-title">風水</h2>
+        <p class="cat-sub">陽宅堪輿——堪察住屋方位理氣，宅安而後人安。</p>
+      </div>
+      <ul class="svc-list">
+        <li class="svc reveal" style="--i:0">
+          <div class="svc-name"><h3>八宅風水</h3></div>
+          <div class="svc-desc"><p>以八宅法論陽宅（住屋）門向、坐向與佈局，定屋中吉凶方位。</p></div>
+        </li>
+        <li class="svc reveal" style="--i:1">
+          <div class="svc-name"><h3>玄空飛星</h3></div>
+          <div class="svc-desc"><p>以玄空飛星論陽宅（住屋）理氣，按元運飛星佈局，催吉化煞。</p></div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 關於法駿師兄 -->
+  <section class="band about" id="about" aria-labelledby="about-title">
+    <div class="wrap reveal">
+      <p class="eyebrow">About the Master</p>
+      <h2 id="about-title">關於法駿師兄</h2>
+      <div class="about-copy">
+        <p>玄通閣由<strong>法駿師兄</strong>主理。師兄以<strong>大六壬</strong>問事決斷為專長，兼治八字、易卦、面相；法科科儀與陽宅風水，亦一併躬行。</p>
+        <p>師兄行事，重「誠」與「直」——課象如何，便如何直說：吉則言吉，凶則言凶，不誇大、不渲染。玄學是輔助決斷的工具，助人看清時勢、趨吉避凶；路，始終要自己行。</p>
+      </div>
+      <p class="about-motto">「盡人事，聽天命——先盡人事。」</p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="band" id="book" aria-labelledby="book-title">
+    <div class="wrap">
+      <div class="cta-panel reveal">
+        <p class="eyebrow">Book via Instagram</p>
+        <h2 id="book-title">私訊 IG 預約</h2>
+        <p class="cta-copy">凡問事、法事、堪宅，請先私訊 Instagram，簡述所問之事；師兄會親自回覆，再約時間詳談。</p>
+        <div class="cta-actions">
+          <a class="btn btn-primary" href="https://www.instagram.com/touch_of_tao" target="_blank" rel="noopener">私訊 @touch_of_tao 預約</a>
+          <span class="cta-handle">Instagram — <a href="https://www.instagram.com/touch_of_tao" target="_blank" rel="noopener">@touch_of_tao</a></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-foot">
+    <div class="foot-grid">
+      <p class="foot-brand">玄通閣<small>Touch of Tao</small></p>
+      <div class="foot-meta">
+        <p>命理・占卜｜法科｜風水</p>
+        <p>Instagram　<a href="https://www.instagram.com/touch_of_tao" target="_blank" rel="noopener">@touch_of_tao</a>　私訊預約</p>
+      </div>
+    </div>
+    <div class="foot-fine">
+      <span>玄學所言，供決斷之參考；重大事宜，仍請謹慎自主。</span>
+      <span>© 2026 玄通閣 Touch of Tao</span>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  var root = document.documentElement;
+  var tao = document.querySelector(".tao");
+  var mqMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  var mqDark = window.matchMedia("(prefers-color-scheme: dark)");
+
+  /* ============================================================
+     Luopan — canvas compass: 24山 / 地支 / 天干 / 八卦 rings
+     ============================================================ */
+  var canvas = document.getElementById("luopan");
+  if (canvas && canvas.getContext){
+    var ctx = canvas.getContext("2d");
+    var CJK = '"Noto Serif TC","Songti TC","Source Han Serif TC","PMingLiU","MingLiU","Yu Mincho",serif';
+    var TAU = Math.PI * 2;
+
+    var MOUNTAINS = ["子","癸","丑","艮","寅","甲","卯","乙","辰","巽","巳","丙",
+                     "午","丁","未","坤","申","庚","酉","辛","戌","乾","亥","壬"];
+    var BRANCHES  = ["子","丑","寅","卯","辰","巳","午","未","申","酉","戌","亥"];
+    var STEMS     = ["甲","乙","丙","丁","戊","己","庚","辛","壬","癸"];
+    /* 後天八卦, clockwise from top (離 south at top, luopan convention),
+       lines bottom→top, 1 = solid (yang), 0 = broken (yin) */
+    var TRIGRAMS  = [
+      [1,0,1], /* 離 */ [0,0,0], /* 坤 */ [1,1,0], /* 兌 */ [1,1,1], /* 乾 */
+      [0,1,0], /* 坎 */ [0,0,1], /* 艮 */ [1,0,0], /* 震 */ [0,1,1]  /* 巽 */
+    ];
+
+    var tok = { line:"#8F7443", glyph:"#D9C9A5", accent:"#C05A40" };
+    function readTokens(){
+      var cs = getComputedStyle(root);
+      tok.line   = (cs.getPropertyValue("--lp-line")   || "").trim() || tok.line;
+      tok.glyph  = (cs.getPropertyValue("--lp-glyph")  || "").trim() || tok.glyph;
+      tok.accent = (cs.getPropertyValue("--lp-accent") || "").trim() || tok.accent;
+    }
+
+    var lastAngle = 0;
+
+    function circle(r, alpha, width){
+      ctx.beginPath();
+      ctx.globalAlpha = alpha;
+      ctx.strokeStyle = tok.line;
+      ctx.lineWidth = width;
+      ctx.arc(0, 0, r, 0, TAU);
+      ctx.stroke();
+    }
+
+    function ticks(n, r0, r1, alpha, width, color){
+      ctx.globalAlpha = alpha;
+      ctx.strokeStyle = color || tok.line;
+      ctx.lineWidth = width;
+      ctx.beginPath();
+      for (var i = 0; i < n; i++){
+        var a = i * TAU / n;
+        ctx.moveTo(r0 * Math.sin(a), -r0 * Math.cos(a));
+        ctx.lineTo(r1 * Math.sin(a), -r1 * Math.cos(a));
+      }
+      ctx.stroke();
+    }
+
+    function ringText(chars, radius, rot, size, alpha, weight){
+      ctx.save();
+      ctx.rotate(rot);
+      ctx.globalAlpha = alpha;
+      ctx.fillStyle = tok.glyph;
+      ctx.font = (weight || 500) + " " + Math.round(size) + "px " + CJK;
+      ctx.textAlign = "center";
+      ctx.textBaseline = "middle";
+      var n = chars.length;
+      for (var i = 0; i < n; i++){
+        ctx.save();
+        ctx.rotate(i * TAU / n);
+        ctx.translate(0, -radius);
+        ctx.fillText(chars[i], 0, 0);
+        ctx.restore();
+      }
+      ctx.restore();
+    }
+
+    function trigramRing(radius, rot, R, alpha){
+      var barW = R * 0.085;
+      var barH = Math.max(1.5, R * 0.014);
+      var gapY = R * 0.03;
+      var gapX = barW * 0.24;
+      ctx.save();
+      ctx.rotate(rot);
+      ctx.globalAlpha = alpha;
+      ctx.fillStyle = tok.glyph;
+      for (var i = 0; i < 8; i++){
+        ctx.save();
+        ctx.rotate(i * TAU / 8);
+        ctx.translate(0, -radius);
+        var lines = TRIGRAMS[i];
+        /* draw top line of the trigram outermost */
+        for (var j = 0; j < 3; j++){
+          var y = (j - 1) * gapY;          /* j=0 outer (top line) */
+          var solid = lines[2 - j] === 1;  /* lines[] is bottom→top */
+          if (solid){
+            ctx.fillRect(-barW / 2, y - barH / 2, barW, barH);
+          } else {
+            var seg = (barW - gapX) / 2;
+            ctx.fillRect(-barW / 2, y - barH / 2, seg, barH);
+            ctx.fillRect(barW / 2 - seg, y - barH / 2, seg, barH);
+          }
+        }
+        ctx.restore();
+      }
+      ctx.restore();
+    }
+
+    function draw(angle){
+      lastAngle = angle;
+      var w = canvas.width, h = canvas.height;
+      if (!w || !h) return;
+      ctx.clearRect(0, 0, w, h);
+      ctx.save();
+      ctx.translate(w / 2, h / 2);
+      var R = Math.min(w, h) / 2 * 0.96;
+
+      /* static frame */
+      circle(R,        0.55, 1.25);
+      circle(R * 0.985,0.30, 1);
+      circle(R * 0.885,0.40, 1);
+      circle(R * 0.79, 0.40, 1);
+      circle(R * 0.665,0.35, 1);
+      circle(R * 0.54, 0.35, 1);
+      circle(R * 0.40, 0.30, 1);
+      circle(R * 0.125,0.45, 1);
+      ticks(72, R * 0.985, R,        0.35, 1);
+      ticks(24, R * 0.885, R * 0.915,0.45, 1);
+      /* four cardinal marks, cinnabar */
+      ticks(4,  R * 0.955, R,        0.8,  1.5, tok.accent);
+
+      /* rotating rings — alternating direction, drifting apart */
+      ringText(MOUNTAINS, R * 0.835, -angle * 0.5,  R * 0.058, 0.55);
+      ringText(BRANCHES,  R * 0.725,  angle,        R * 0.082, 0.85, 600);
+      ringText(STEMS,     R * 0.60,  -angle * 0.66, R * 0.068, 0.6);
+      trigramRing(        R * 0.465,  angle * 0.4,  R,         0.7);
+
+      /* 天池 — still needle at the centre */
+      ctx.globalAlpha = 0.8;
+      ctx.lineWidth = Math.max(1.25, R * 0.006);
+      ctx.beginPath();
+      ctx.strokeStyle = tok.accent;
+      ctx.moveTo(0, 0);
+      ctx.lineTo(0, -R * 0.095);
+      ctx.stroke();
+      ctx.beginPath();
+      ctx.globalAlpha = 0.55;
+      ctx.strokeStyle = tok.glyph;
+      ctx.moveTo(0, 0);
+      ctx.lineTo(0, R * 0.095);
+      ctx.stroke();
+      ctx.beginPath();
+      ctx.globalAlpha = 0.9;
+      ctx.fillStyle = tok.accent;
+      ctx.arc(0, 0, Math.max(1.5, R * 0.009), 0, TAU);
+      ctx.fill();
+
+      ctx.restore();
+      ctx.globalAlpha = 1;
+    }
+
+    function resize(){
+      var rect = canvas.getBoundingClientRect();
+      var dpr = Math.min(window.devicePixelRatio || 1, 2);
+      var w = Math.round(rect.width * dpr);
+      var h = Math.round(rect.height * dpr);
+      if (w !== canvas.width || h !== canvas.height){
+        canvas.width = w;
+        canvas.height = h;
+      }
+      draw(lastAngle);
+    }
+
+    /* animation loop — gated by reduced-motion, tab visibility,
+       and whether the hero is actually on screen */
+    var rafId = null;
+    var heroVisible = true;
+    var t0 = null;
+    var SPEED = TAU / 240; /* one base revolution ≈ 4 minutes */
+
+    function frame(now){
+      if (t0 === null) t0 = now;
+      draw(((now - t0) / 1000) * SPEED);
+      rafId = requestAnimationFrame(frame);
+    }
+    function updateRunning(){
+      var should = !mqMotion.matches &&
+                   heroVisible &&
+                   document.visibilityState === "visible";
+      if (should && rafId === null){
+        rafId = requestAnimationFrame(frame);
+      } else if (!should && rafId !== null){
+        cancelAnimationFrame(rafId);
+        rafId = null;
+        if (mqMotion.matches) draw(0); /* frozen, composed state */
+      }
+    }
+
+    readTokens();
+    resize();
+    if (mqMotion.matches) draw(0);
+    updateRunning();
+
+    if ("ResizeObserver" in window){
+      new ResizeObserver(resize).observe(canvas);
+    } else {
+      window.addEventListener("resize", resize);
+    }
+    if ("IntersectionObserver" in window){
+      new IntersectionObserver(function(entries){
+        heroVisible = entries[0].isIntersecting;
+        updateRunning();
+      }, { threshold: 0 }).observe(canvas);
+    }
+    document.addEventListener("visibilitychange", updateRunning);
+
+    var onMotionChange = function(){ updateRunning(); if (mqMotion.matches) draw(0); };
+    var onThemeChange = function(){ readTokens(); draw(lastAngle); };
+    if (mqMotion.addEventListener){ mqMotion.addEventListener("change", onMotionChange); }
+    else if (mqMotion.addListener){ mqMotion.addListener(onMotionChange); }
+    if (mqDark.addEventListener){ mqDark.addEventListener("change", onThemeChange); }
+    else if (mqDark.addListener){ mqDark.addListener(onThemeChange); }
+    if ("MutationObserver" in window){
+      new MutationObserver(onThemeChange)
+        .observe(root, { attributes: true, attributeFilter: ["data-theme"] });
+    }
+  }
+
+  /* ============================================================
+     Scroll reveal — armed only when motion is allowed; content
+     stays fully visible without JS or with reduced motion.
+     ============================================================ */
+  if (tao && "IntersectionObserver" in window){
+    if (!mqMotion.matches){ tao.classList.add("tao-anim"); }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting){
+          e.target.classList.add("is-in");
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: "0px 0px -6% 0px" });
+    Array.prototype.forEach.call(
+      tao.querySelectorAll(".reveal"),
+      function(el){ io.observe(el); }
+    );
+  }
+})();
+</script>
+
+</body>
+</html>
