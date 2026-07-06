@@ -1,0 +1,7 @@
+# Claude Code 本地設定（含個人權限，唔入 repo）
+.claude/
+
+# 作業系統雜項
+Thumbs.db
+desktop.ini
+.DS_Store
