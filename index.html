@@ -9,15 +9,17 @@
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#15100C">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%98%AF%3C/text%3E%3C/svg%3E">
+<style>*{box-sizing:border-box}html,body{margin:0;padding:0}</style>
 <title>玄通閣 · Touch of Tao</title>
 </head>
 <body>
 <style>
 /* ============================================================
-   玄通閣 · Touch of Tao — landing page
+   玄通閣 · Touch of Tao — landing page (service-layout demo)
    Palette: lacquer / bronze / cinnabar / jade / rice-paper
    Tokens on :root (light defaults) → dark via media query,
    then data-theme attribute overrides win in both directions.
+   All prices on this page are FAKE demo numbers, tagged 示例.
    ============================================================ */
 
 :root{
@@ -145,6 +147,15 @@
   --lp-line:       #A78C52;
   --lp-glyph:      #4C3D25;
   --lp-accent:     #9E3B2E;
+}
+
+/* Standalone-page hardening: without this, a served copy of this file
+   shows the browser default white html/body + 8px body margin as a
+   white edge around .tao. No visual effect inside the Artifact. */
+html, body{
+  margin: 0;
+  padding: 0;
+  background: var(--ground);
 }
 
 @media (prefers-reduced-motion: no-preference){
@@ -436,42 +447,112 @@
   .cat-vert{ display: block; }
 }
 
-/* service rows */
-.svc-list{
+/* ---------- demo notice (fake prices) ---------- */
+.demo-note{
+  margin-top: 1.6rem;
+  display: inline-flex;
+  align-items: baseline;
+  gap: .65rem;
+  font-size: .82rem;
+  letter-spacing: .04em;
+  color: var(--ink-soft);
+  border: 1px dashed var(--bronze-dim);
+  border-radius: 2px;
+  padding: .6em 1em .55em;
+}
+
+/* ---------- service cards ---------- */
+.svc-grid{
   list-style: none;
-  margin: 2.4rem 0 0;
+  margin: 2.3rem 0 0;
   padding: 0;
+  display: grid;
+  gap: 1.3rem;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 16rem), 1fr));
+  align-items: stretch;
 }
-.svc{
-  padding: 1.35rem .1rem;
-  border-top: 1px solid var(--line);
-}
-.svc:first-child{ border-top: 0; padding-top: .4rem; }
-@media (min-width: 620px){
-  .svc{
-    display: grid;
-    grid-template-columns: 9.5rem 1fr;
-    gap: 1.4rem;
-    align-items: start;
-  }
-}
-.svc-name{
+.card{
+  position: relative;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  padding: 1.15rem 1.15rem 1.3rem;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: .55rem;
+  gap: 1rem;
 }
-.svc-name h3{
-  font-size: 1.28rem;
+.card-body{
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: .7rem;
+}
+.card-head{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .35rem .7rem;
+}
+.card-head h3{
+  font-size: 1.24rem;
   letter-spacing: .1em;
 }
-.svc-desc{
+.card-desc{
   color: var(--ink-soft);
-  font-size: .96rem;
-  margin-top: .35rem;
+  font-size: .92rem;
+  line-height: 1.85;
 }
-@media (min-width: 620px){
-  .svc-desc{ margin-top: .3rem; }
+.card-prep{
+  display: flex;
+  align-items: baseline;
+  gap: .6rem;
+  font-size: .84rem;
+  color: var(--ink-soft);
+}
+.prep-chip{
+  flex: none;
+  font-weight: 600;
+  font-size: .68rem;
+  letter-spacing: .18em;
+  line-height: 1;
+  color: var(--jade);
+  border: 1px solid var(--jade-line);
+  background: var(--jade-wash);
+  padding: .38em .6em .32em;
+  border-radius: 2px;
+  white-space: nowrap;
+}
+.card-price{
+  margin-top: auto;
+  padding-top: .85rem;
+  border-top: 1px dashed var(--line);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: .4rem .6rem;
+  font-variant-numeric: tabular-nums;
+}
+.price-num{
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.16rem;
+  letter-spacing: .03em;
+  color: var(--ink);
+}
+.price-note{
+  font-size: .78rem;
+  letter-spacing: .06em;
+  color: var(--ink-faint);
+}
+.tag-demo{
+  font-size: .64rem;
+  letter-spacing: .18em;
+  line-height: 1;
+  color: var(--ink-faint);
+  border: 1px dashed var(--ink-faint);
+  border-radius: 2px;
+  padding: .34em .55em .3em;
+  white-space: nowrap;
 }
 .tag{
   display: inline-block;
@@ -493,42 +574,146 @@
   background: var(--jade-wash);
 }
 
-/* featured: 大六壬 */
-.svc-feat{
-  position: relative;
-  border-top: 0;
-  border: 1px solid var(--cinnabar-line);
-  background: var(--surface);
-  padding: 1.5rem 1.4rem;
-  margin-block: .9rem;
+/* featured card: 大六壬 */
+.card-feat{
+  border-color: var(--cinnabar-line);
 }
-.svc-feat + .svc{ border-top: 0; }
-.svc-feat::before,
-.svc-feat::after{
+.card-feat::before,
+.card-feat::after{
   content: "";
   position: absolute;
   inline-size: .75rem;
   block-size: .75rem;
   pointer-events: none;
 }
-.svc-feat::before{
+.card-feat::before{
   top: -1px; left: -1px;
   border-top: 2px solid var(--cinnabar);
   border-left: 2px solid var(--cinnabar);
 }
-.svc-feat::after{
+.card-feat::after{
   bottom: -1px; right: -1px;
   border-bottom: 2px solid var(--cinnabar);
   border-right: 2px solid var(--cinnabar);
 }
-.svc-feat .svc-name h3{ font-size: 1.5rem; }
-.svc-feat .svc-desc{ color: var(--ink); }
-.svc-feat .svc-desc em{
-  font-style: normal;
-  color: var(--ink-soft);
+.card-feat .card-head h3{ font-size: 1.38rem; }
+.card-feat .card-desc{ color: var(--ink); }
+
+/* media slot — vertical 9:16 reel placeholder (pure CSS poster) */
+.reel{
+  position: relative;
+  width: min(100%, 14.5rem);
+  margin-inline: auto;
+  aspect-ratio: 9 / 16;
+  border: 1px solid var(--line);
+  border-radius: .9rem;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(120% 80% at 50% 0%, var(--halo), transparent 62%),
+    linear-gradient(168deg, var(--ground-2), var(--surface) 52%, var(--ground-2));
+}
+.reel::before{
+  /* faint luopan ring motif */
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-radial-gradient(circle at 50% 42%,
+      var(--lp-line) 0 1px, transparent 1px 2.1rem);
+  opacity: .16;
+  pointer-events: none;
+}
+.reel::after{
+  /* faint cinnabar seal glyph */
+  content: attr(data-glyph);
+  position: absolute;
+  left: 50%;
+  top: 42%;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 4.6rem;
+  line-height: 1;
+  color: var(--cinnabar);
+  border: 2px solid currentColor;
+  padding: .12em .14em;
+  opacity: .13;
+  pointer-events: none;
+}
+.reel-tag{
+  position: absolute;
+  z-index: 1;
+  top: .7rem;
+  left: .7rem;
+  font-size: .68rem;
+  letter-spacing: .16em;
+  line-height: 1;
+  color: var(--ink);
+  background: var(--hero-scrim);
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  padding: .4em .65em .35em;
+}
+.reel-note{
+  position: absolute;
+  z-index: 1;
+  bottom: .65rem;
+  right: .75rem;
+  font-size: .62rem;
+  letter-spacing: .16em;
+  color: var(--ink-faint);
+}
+.reel-play{
+  position: relative;
+  z-index: 1;
+  inline-size: 3.4rem;
+  block-size: 3.4rem;
+  padding: 0;
+  border-radius: 50%;
+  border: 1px solid var(--bronze-dim);
+  background: var(--hero-scrim);
+  color: var(--bronze-strong);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+.reel-play:hover{
+  border-color: var(--bronze);
+  color: var(--bronze);
+  background: var(--surface);
+}
+.reel-tri{
   display: block;
-  font-size: .88rem;
-  margin-top: .5em;
+  inline-size: 0;
+  block-size: 0;
+  margin-left: .22rem;
+  border-block: .55rem solid transparent;
+  border-left: .9rem solid currentColor;
+}
+
+/* text-only card: slim decorative header bar */
+.card-rule{
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+  padding-block: .15rem;
+  color: var(--cat-accent, var(--bronze));
+}
+.card-rule::before,
+.card-rule::after{
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+}
+.card-rule b{
+  display: block;
+  inline-size: .5rem;
+  block-size: .5rem;
+  border: 1px solid currentColor;
+  transform: rotate(45deg);
 }
 
 /* ---------- bridge: 法科 × 風水 ---------- */
@@ -623,6 +808,117 @@
   font-size: .9rem;
   color: var(--ink-soft);
 }
+
+/* ---------- booking / consultation flow ---------- */
+.booking{ border-top: 1px solid var(--line-soft); }
+.booking h2{ font-size: clamp(1.7rem, 5vw, 2.15rem); margin-top: .55rem; }
+.booking-sub{
+  margin-top: 2.6rem;
+  font-size: 1.02rem;
+  letter-spacing: .18em;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  gap: .9rem;
+}
+.booking-sub::after{
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--line-soft);
+}
+.fmt-row{
+  list-style: none;
+  margin: 1.4rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: .9rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 8.5rem), 1fr));
+}
+.fmt{
+  border: 1px solid var(--line);
+  background: var(--surface);
+  padding: 1.05rem .8rem .95rem;
+  display: grid;
+  justify-items: center;
+  gap: .5rem;
+  text-align: center;
+}
+.fmt svg{
+  inline-size: 1.7rem;
+  block-size: 1.7rem;
+  color: var(--bronze);
+}
+.fmt-name{
+  font-size: .88rem;
+  letter-spacing: .1em;
+  line-height: 1.5;
+}
+.flow{
+  list-style: none;
+  margin: 1.6rem 0 0;
+  padding: 0;
+  position: relative;
+  display: grid;
+  gap: 1.15rem;
+}
+.flow::before{
+  content: "";
+  position: absolute;
+  left: 1.2rem;
+  top: 1.2rem;
+  bottom: 1.2rem;
+  width: 1px;
+  background: var(--line);
+}
+.step{
+  position: relative;
+  display: grid;
+  grid-template-columns: 2.4rem 1fr;
+  gap: 1rem;
+  align-items: start;
+}
+.step-num{
+  inline-size: 1.75rem;
+  block-size: 1.75rem;
+  margin: .3rem auto 0;
+  transform: rotate(45deg);
+  border: 1px solid var(--bronze-dim);
+  background: var(--ground);
+  display: grid;
+  place-items: center;
+}
+.step-num b{
+  transform: rotate(-45deg);
+  font-family: var(--font-latin);
+  font-weight: 600;
+  font-size: .88rem;
+  color: var(--bronze);
+  font-variant-numeric: tabular-nums;
+}
+.step-t{
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.05rem;
+  letter-spacing: .08em;
+  color: var(--ink);
+}
+.step-d{
+  margin-top: .2rem;
+  font-size: .88rem;
+  color: var(--ink-soft);
+}
+.flow-note{
+  margin-top: 1.8rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: .6rem;
+  font-size: .86rem;
+  color: var(--ink-soft);
+}
+.booking-cta{ margin-top: 1.5rem; }
 
 /* ---------- about ---------- */
 .about{ background: var(--ground-2); }
@@ -797,27 +1093,55 @@
         <h2 id="mingli-title">命理・占卜</h2>
         <p class="cat-sub">推命問事——以生辰、課象、卦象與面相斷事，知命而後謀事。</p>
       </div>
-      <ul class="svc-list">
-        <li class="svc reveal" style="--i:0">
-          <div class="svc-name"><h3>八字算命</h3></div>
-          <div class="svc-desc"><p>以生辰八字推算命格、大運流年——論性情、事業、姻緣、財運之走勢。</p></div>
-        </li>
-        <li class="svc svc-feat reveal" style="--i:1">
-          <div class="svc-name">
-            <h3>大六壬</h3>
-            <span class="tag tag-feat">招牌・師兄專長</span>
+      <p class="demo-note reveal"><span class="tag-demo">示例</span>以下為示例數字，方便你預覽排版，正式價目稍後更新。</p>
+      <ul class="svc-grid">
+        <li class="card reveal" style="--i:0">
+          <div class="reel" data-glyph="命">
+            <span class="reel-tag">短片簡介</span>
+            <button type="button" class="reel-play" aria-label="播放「八字算命」短片簡介——示例片位，暫未有影片">
+              <span class="reel-tri" aria-hidden="true"></span>
+            </button>
+            <span class="reel-note">示例・片位</span>
           </div>
-          <div class="svc-desc">
-            <p>起課問事，吉凶決斷。大六壬為古三式之一——以正時起課，斷人事之成敗、行藏、去留。<em>問事之精微處，正是師兄深研所在。</em></p>
+          <div class="card-body">
+            <div class="card-head"><h3>八字算命</h3></div>
+            <p class="card-desc">以出生年月日時排四柱，論命格強弱與大運流年。事業、姻緣、財運之走勢，逐項細看；知其起伏，方能謀定而後動。</p>
+            <p class="card-prep"><span class="prep-chip">要準備</span><span>出生年月日時（農曆／陽曆皆可）</span></p>
+            <p class="card-price"><strong class="price-num">HK$680</strong><span class="price-note">約60分鐘</span><span class="tag-demo">示例</span></p>
           </div>
         </li>
-        <li class="svc reveal" style="--i:2">
-          <div class="svc-name"><h3>易經占卜</h3></div>
-          <div class="svc-desc"><p>卜卦問事，決疑解惑——事有猶豫未決，可就一事起卦，觀其吉凶進退。</p></div>
+        <li class="card card-feat reveal" style="--i:1">
+          <div class="reel" data-glyph="壬">
+            <span class="reel-tag">短片簡介</span>
+            <button type="button" class="reel-play" aria-label="播放「大六壬問事」短片簡介——示例片位，暫未有影片">
+              <span class="reel-tri" aria-hidden="true"></span>
+            </button>
+            <span class="reel-note">示例・片位</span>
+          </div>
+          <div class="card-body">
+            <div class="card-head"><h3>大六壬問事</h3><span class="tag tag-feat">招牌・師兄專長</span></div>
+            <p class="card-desc">古三式之一，以正時起課，專斷一事之吉凶成敗。事情去向、時機進退，依課象直言——問事之精微處，正是師兄深研所在。</p>
+            <p class="card-prep"><span class="prep-chip">要準備</span><span>想問嘅具體事項</span></p>
+            <p class="card-price"><strong class="price-num">HK$380</strong><span class="price-note">每事</span><span class="tag-demo">示例</span></p>
+          </div>
         </li>
-        <li class="svc reveal" style="--i:3">
-          <div class="svc-name"><h3>面相</h3></div>
-          <div class="svc-desc"><p>觀相知命——察五官、氣色，論當下運勢與人事。</p></div>
+        <li class="card reveal" style="--i:2">
+          <div class="card-rule" aria-hidden="true"><b></b></div>
+          <div class="card-body">
+            <div class="card-head"><h3>易經占卜</h3></div>
+            <p class="card-desc">事有猶豫未決，可就一事起卦。觀卦象之吉凶進退，供你決斷參考；一卦一事，問得越具體，斷得越清楚。</p>
+            <p class="card-prep"><span class="prep-chip">要準備</span><span>心中所疑之事</span></p>
+            <p class="card-price"><strong class="price-num">HK$380</strong><span class="tag-demo">示例</span></p>
+          </div>
+        </li>
+        <li class="card reveal" style="--i:3">
+          <div class="card-rule" aria-hidden="true"><b></b></div>
+          <div class="card-body">
+            <div class="card-head"><h3>面相</h3></div>
+            <p class="card-desc">察五官、氣色與神態，論當下運勢與人事關係。相不獨論，會配合你所問之事一併細看。</p>
+            <p class="card-prep"><span class="prep-chip">要準備</span><span>清晰正面相片或親臨</span></p>
+            <p class="card-price"><strong class="price-num">HK$580</strong><span class="tag-demo">示例</span></p>
+          </div>
         </li>
       </ul>
     </div>
@@ -833,28 +1157,54 @@
         <h2 id="fa-title">法科</h2>
         <p class="cat-sub">符法科儀——符箓法事，科儀行持，以法濟事、趨吉避凶。</p>
       </div>
-      <ul class="svc-list">
-        <li class="svc reveal" style="--i:0">
-          <div class="svc-name"><h3>符咒</h3></div>
-          <div class="svc-desc"><p>開光符箓，趨吉避凶——依事求符，經科儀開光而後付用。</p></div>
-        </li>
-        <li class="svc reveal" style="--i:1">
-          <div class="svc-name"><h3>驅邪</h3></div>
-          <div class="svc-desc"><p>清淨化解，退煞驅穢——宅舍不寧、身有沖犯，以法事清淨之。</p></div>
-        </li>
-        <li class="svc reveal" style="--i:2">
-          <div class="svc-name">
-            <h3>和合</h3>
-            <span class="tag tag-cross">可交叉風水</span>
+      <ul class="svc-grid">
+        <li class="card reveal" style="--i:0">
+          <div class="reel" data-glyph="符">
+            <span class="reel-tag">短片簡介</span>
+            <button type="button" class="reel-play" aria-label="播放「符咒」短片簡介——示例片位，暫未有影片">
+              <span class="reel-tri" aria-hidden="true"></span>
+            </button>
+            <span class="reel-note">示例・片位</span>
           </div>
-          <div class="svc-desc"><p>感情復合、姻緣和合——修補情緣，以法事助合。</p></div>
-        </li>
-        <li class="svc reveal" style="--i:3">
-          <div class="svc-name">
-            <h3>招財</h3>
-            <span class="tag tag-cross">可交叉風水</span>
+          <div class="card-body">
+            <div class="card-head"><h3>符咒</h3></div>
+            <p class="card-desc">依事求符，經科儀開光而後付用。護身、安宅、催旺，各有其符；先說明所求，師兄會建議合適之法。</p>
+            <p class="card-prep"><span class="prep-chip">要準備</span><span>說明所求</span></p>
+            <p class="card-price"><strong class="price-num">HK$500 起</strong><span class="price-note">每道</span><span class="tag-demo">示例</span></p>
           </div>
-          <div class="svc-desc"><p>招財納福、生意興隆——正財偏財、店舖生意，以法催旺。</p></div>
+        </li>
+        <li class="card reveal" style="--i:1">
+          <div class="card-rule" aria-hidden="true"><b></b></div>
+          <div class="card-body">
+            <div class="card-head"><h3>驅邪</h3></div>
+            <p class="card-desc">宅舍不寧、身有沖犯，先了解情況，再以法事清淨化解。事有輕重，做法與次第亦不同，故須先詳談。</p>
+            <p class="card-prep"><span class="prep-chip">要準備</span><span>情況描述、地址</span></p>
+            <p class="card-price"><strong class="price-num">HK$1,800 起</strong><span class="tag-demo">示例</span></p>
+          </div>
+        </li>
+        <li class="card reveal" style="--i:2">
+          <div class="card-rule" aria-hidden="true"><b></b></div>
+          <div class="card-body">
+            <div class="card-head"><h3>和合</h3><span class="tag tag-cross">可交叉風水</span></div>
+            <p class="card-desc">感情生變、姻緣受阻，以和合法事修補情緣。先了解雙方情況，再定做法；可與桃花位風水佈局並行。</p>
+            <p class="card-prep"><span class="prep-chip">要準備</span><span>雙方基本資料</span></p>
+            <p class="card-price"><strong class="price-num">HK$1,280 起</strong><span class="tag-demo">示例</span></p>
+          </div>
+        </li>
+        <li class="card reveal" style="--i:3">
+          <div class="reel" data-glyph="財">
+            <span class="reel-tag">短片簡介</span>
+            <button type="button" class="reel-play" aria-label="播放「招財」短片簡介——示例片位，暫未有影片">
+              <span class="reel-tri" aria-hidden="true"></span>
+            </button>
+            <span class="reel-note">示例・片位</span>
+          </div>
+          <div class="card-body">
+            <div class="card-head"><h3>招財</h3><span class="tag tag-cross">可交叉風水</span></div>
+            <p class="card-desc">正財偏財、店舖生意，以法催旺。先辨所求方向，再擇合適法門；可配合屋中財位佈局，雙管齊下。</p>
+            <p class="card-prep"><span class="prep-chip">要準備</span><span>所求方向（事業／偏財等）</span></p>
+            <p class="card-price"><strong class="price-num">HK$1,280 起</strong><span class="tag-demo">示例</span></p>
+          </div>
         </li>
       </ul>
     </div>
@@ -900,16 +1250,115 @@
         <h2 id="fengshui-title">風水</h2>
         <p class="cat-sub">陽宅堪輿——堪察住屋方位理氣，宅安而後人安。</p>
       </div>
-      <ul class="svc-list">
-        <li class="svc reveal" style="--i:0">
-          <div class="svc-name"><h3>八宅風水</h3></div>
-          <div class="svc-desc"><p>以八宅法論陽宅（住屋）門向、坐向與佈局，定屋中吉凶方位。</p></div>
+      <ul class="svc-grid">
+        <li class="card reveal" style="--i:0">
+          <div class="card-rule" aria-hidden="true"><b></b></div>
+          <div class="card-body">
+            <div class="card-head"><h3>八宅風水</h3></div>
+            <p class="card-desc">以八宅法論住屋門向、坐向與佈局，定屋中吉凶方位。牀位、爐灶、書枱如何安置，逐一交代。</p>
+            <p class="card-prep"><span class="prep-chip">要準備</span><span>單位地址、坐向</span></p>
+            <p class="card-price"><strong class="price-num">HK$2,800 起</strong><span class="tag-demo">示例</span></p>
+          </div>
         </li>
-        <li class="svc reveal" style="--i:1">
-          <div class="svc-name"><h3>玄空飛星</h3></div>
-          <div class="svc-desc"><p>以玄空飛星論陽宅（住屋）理氣，按元運飛星佈局，催吉化煞。</p></div>
+        <li class="card reveal" style="--i:1">
+          <div class="reel" data-glyph="星">
+            <span class="reel-tag">短片簡介</span>
+            <button type="button" class="reel-play" aria-label="播放「玄空飛星」短片簡介——示例片位，暫未有影片">
+              <span class="reel-tri" aria-hidden="true"></span>
+            </button>
+            <span class="reel-note">示例・片位</span>
+          </div>
+          <div class="card-body">
+            <div class="card-head"><h3>玄空飛星</h3></div>
+            <p class="card-desc">按元運飛星排盤，論住屋理氣旺衰。何處催吉、何處化煞，依平面圖逐宮細看，並交代佈局建議。</p>
+            <p class="card-prep"><span class="prep-chip">要準備</span><span>平面圖、入伙年份</span></p>
+            <p class="card-price"><strong class="price-num">HK$3,800 起</strong><span class="tag-demo">示例</span></p>
+          </div>
         </li>
       </ul>
+    </div>
+  </section>
+
+  <!-- 預約／諮詢流程 -->
+  <section class="band booking" id="booking" aria-labelledby="booking-title">
+    <div class="wrap">
+      <div class="reveal">
+        <p class="eyebrow">Consultation · 預約</p>
+        <h2 id="booking-title">預約／諮詢流程</h2>
+        <p class="cat-sub">問事、法事、堪宅，皆先經 Instagram 私訊安排——形式如下，任擇其一。</p>
+      </div>
+
+      <h3 class="booking-sub reveal">諮詢形式</h3>
+      <ul class="fmt-row">
+        <li class="fmt reveal" style="--i:0">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="9" cy="8" r="3"/>
+            <path d="M3.5 19c.6-3 2.8-4.6 5.5-4.6s4.9 1.6 5.5 4.6"/>
+            <circle cx="16.8" cy="9.5" r="2.3"/>
+            <path d="M15.8 14.7c2.5.3 4.1 1.7 4.7 4.3"/>
+          </svg>
+          <span class="fmt-name">面對面</span>
+        </li>
+        <li class="fmt reveal" style="--i:1">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="3" y="7" width="12" height="10" rx="2"/>
+            <path d="M15 10.8 20.5 8v8L15 13.2"/>
+          </svg>
+          <span class="fmt-name">視像通話</span>
+        </li>
+        <li class="fmt reveal" style="--i:2">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M5 4h3.2L10 8.4 7.9 10a12.8 12.8 0 0 0 6.1 6.1l1.6-2.1 4.4 1.8V19a1.9 1.9 0 0 1-2.1 1.9A16.6 16.6 0 0 1 3.1 6.1 1.9 1.9 0 0 1 5 4Z"/>
+          </svg>
+          <span class="fmt-name">電話</span>
+        </li>
+        <li class="fmt reveal" style="--i:3">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 4a8 8 0 0 1 8 8 8 8 0 0 1-8 8c-1.4 0-2.7-.3-3.9-1L4 20l1-4.1A8 8 0 0 1 12 4Z"/>
+            <circle cx="8.6" cy="12" r=".5" fill="currentColor"/>
+            <circle cx="12" cy="12" r=".5" fill="currentColor"/>
+            <circle cx="15.4" cy="12" r=".5" fill="currentColor"/>
+          </svg>
+          <span class="fmt-name">WhatsApp 文字</span>
+        </li>
+      </ul>
+
+      <h3 class="booking-sub reveal">流程四步</h3>
+      <ol class="flow">
+        <li class="step reveal" style="--i:0">
+          <span class="step-num" aria-hidden="true"><b>1</b></span>
+          <div>
+            <strong class="step-t">IG 私訊揀服務</strong>
+            <p class="step-d">私訊 @touch_of_tao，講低想睇邊項服務、簡述所問之事。</p>
+          </div>
+        </li>
+        <li class="step reveal" style="--i:1">
+          <span class="step-num" aria-hidden="true"><b>2</b></span>
+          <div>
+            <strong class="step-t">確認時間與形式</strong>
+            <p class="step-d">師兄回覆後，同你夾好日期、時間，同揀定諮詢形式。</p>
+          </div>
+        </li>
+        <li class="step reveal" style="--i:2">
+          <span class="step-num" aria-hidden="true"><b>3</b></span>
+          <div>
+            <strong class="step-t">付款</strong>
+            <p class="step-d">確認後按指示付款，完成預約。</p>
+          </div>
+        </li>
+        <li class="step reveal" style="--i:3">
+          <span class="step-num" aria-hidden="true"><b>4</b></span>
+          <div>
+            <strong class="step-t">進行諮詢／交付</strong>
+            <p class="step-d">依約進行諮詢；符咒、法事類則按約定安排交付。</p>
+          </div>
+        </li>
+      </ol>
+
+      <p class="flow-note reveal">一般 24 小時內回覆<span class="tag-demo">示例</span></p>
+      <div class="booking-cta reveal">
+        <a class="btn btn-primary" href="https://www.instagram.com/touch_of_tao" target="_blank" rel="noopener">IG 私訊預約</a>
+      </div>
     </div>
   </section>
 
