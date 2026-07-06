@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="玄通閣 Touch of Tao — 香港玄學服務：命理・占卜（八字・大六壬・易經・面相）、法科（符咒・驅邪・和合・招財）、風水（八宅・玄空飛星）。師傅法駿師兄。">
+<meta name="description" content="玄通閣 Touch of Tao — 香港玄學服務：大六壬問事、八字、易卦、面相、符法科儀、陽宅風水，皆由法駿師兄親自主理。">
 <meta property="og:title" content="玄通閣 · Touch of Tao">
 <meta property="og:description" content="命理・占卜｜法科｜風水　—　法駿師兄">
 <meta property="og:type" content="website">
@@ -1042,6 +1042,195 @@ html, body{
     transform: none;
   }
 }
+
+/* ---------- assurances (trust strip) ---------- */
+.assure{
+  background: var(--ground-2);
+  border-top: 1px solid var(--line-soft);
+}
+.assure-row{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 1.3rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+}
+.assure-item{
+  border: 1px solid var(--line);
+  background: var(--surface);
+  padding: 1.5rem 1.4rem;
+  display: grid;
+  gap: .5rem;
+}
+.assure-mark{
+  inline-size: 2.2rem;
+  block-size: 2.2rem;
+  margin-bottom: .5rem;
+  transform: rotate(45deg);
+  border: 1px solid var(--bronze-dim);
+  display: grid;
+  place-items: center;
+}
+.assure-mark b{
+  transform: rotate(-45deg);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--bronze);
+}
+.assure-item strong{
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.14rem;
+  letter-spacing: .1em;
+  color: var(--ink);
+}
+.assure-item p{
+  font-size: .9rem;
+  line-height: 1.85;
+  color: var(--ink-soft);
+}
+
+/* ---------- booking meta (payment / venue) ---------- */
+.book-meta{
+  list-style: none;
+  margin: 1.6rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: .85rem;
+}
+.book-meta li{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: .6rem .8rem;
+  font-size: .9rem;
+  color: var(--ink-soft);
+}
+.bm-k{
+  flex: none;
+  font-weight: 600;
+  font-size: .7rem;
+  letter-spacing: .18em;
+  line-height: 1;
+  color: var(--bronze);
+  border: 1px solid var(--bronze-dim);
+  border-radius: 2px;
+  padding: .4em .62em .34em;
+  white-space: nowrap;
+}
+
+/* ---------- client voices (testimonials, demo) ---------- */
+.voices{ border-top: 1px solid var(--line-soft); }
+.voices h2{ font-size: clamp(1.7rem, 5vw, 2.15rem); margin-top: .55rem; }
+.voice-grid{
+  list-style: none;
+  margin: 2.3rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 1.3rem;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 17rem), 1fr));
+  align-items: stretch;
+}
+.voice{
+  position: relative;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  padding: 2.5rem 1.4rem 1.3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+.voice::before{
+  content: "\201C";
+  position: absolute;
+  left: 1rem;
+  top: .5rem;
+  font-family: var(--font-latin);
+  font-size: 2.8rem;
+  line-height: 1;
+  color: var(--bronze-dim);
+  pointer-events: none;
+}
+.voice-q{
+  font-size: .95rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+.voice-foot{
+  margin-top: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: .5rem .7rem;
+  padding-top: .95rem;
+  border-top: 1px dashed var(--line);
+}
+.voice-who{
+  font-size: .82rem;
+  letter-spacing: .06em;
+  color: var(--ink-soft);
+}
+.voice-svc{
+  font-size: .68rem;
+  letter-spacing: .14em;
+  line-height: 1;
+  color: var(--jade);
+  border: 1px solid var(--jade-line);
+  background: var(--jade-wash);
+  border-radius: 2px;
+  padding: .36em .6em .3em;
+  white-space: nowrap;
+}
+
+/* ---------- faq ---------- */
+.faq{ background: var(--ground-2); }
+.faq h2{ font-size: clamp(1.7rem, 5vw, 2.15rem); margin-top: .55rem; }
+.faq-list{ margin-top: 2.2rem; border-top: 1px solid var(--line); }
+.faq-item{ border-bottom: 1px solid var(--line); }
+.faq-item summary{
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: baseline;
+  gap: .8rem;
+  padding: 1.2rem .2rem;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.04rem;
+  letter-spacing: .05em;
+  color: var(--ink);
+}
+.faq-item summary::-webkit-details-marker{ display: none; }
+.faq-item summary::after{
+  content: "＋";
+  margin-left: auto;
+  padding-left: 1rem;
+  color: var(--bronze);
+  font-family: var(--font-latin);
+  font-weight: 400;
+}
+.faq-item[open] summary::after{ content: "－"; }
+.faq-item summary:focus-visible{
+  outline: 2px solid var(--bronze);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+.faq-n{
+  flex: none;
+  font-family: var(--font-latin);
+  font-variant-numeric: tabular-nums;
+  font-size: .95rem;
+  color: var(--bronze);
+}
+.faq-a{
+  padding: 0 .2rem 1.35rem 2rem;
+  color: var(--ink-soft);
+  font-size: .93rem;
+  line-height: 1.9;
+  max-width: 46em;
+}
 </style>
 
 <div class="tao" lang="zh-Hant-HK" id="top">
@@ -1279,6 +1468,30 @@ html, body{
     </div>
   </section>
 
+  <!-- 承諾 -->
+  <aside class="band assure" aria-label="玄通閣的承諾">
+    <div class="wrap">
+      <p class="eyebrow reveal">Our Commitments · 承諾</p>
+      <ul class="assure-row">
+        <li class="assure-item reveal" style="--i:0">
+          <span class="assure-mark" aria-hidden="true"><b>價</b></span>
+          <strong>明碼實價</strong>
+          <p>各項收費預約前講清楚；如需分級或按情況報價，亦會事先講明——唔會做到一半先加錢。</p>
+        </li>
+        <li class="assure-item reveal" style="--i:1">
+          <span class="assure-mark" aria-hidden="true"><b>密</b></span>
+          <strong>嚴守私隱</strong>
+          <p>你嘅生辰、住址、所問之事一律保密，只用於是次批算，唔會外傳或另作他用。</p>
+        </li>
+        <li class="assure-item reveal" style="--i:2">
+          <span class="assure-mark" aria-hidden="true"><b>直</b></span>
+          <strong>據實直言</strong>
+          <p>課象吉凶如實相告，唔誇大、唔恐嚇。玄學只作決斷之參考，助你趨吉避凶。</p>
+        </li>
+      </ul>
+    </div>
+  </aside>
+
   <!-- 預約／諮詢流程 -->
   <section class="band booking" id="booking" aria-labelledby="booking-title">
     <div class="wrap">
@@ -1355,7 +1568,11 @@ html, body{
         </li>
       </ol>
 
-      <p class="flow-note reveal">一般 24 小時內回覆<span class="tag-demo">示例</span></p>
+      <ul class="book-meta reveal">
+        <li><span class="bm-k">付款</span><span>FPS／轉數快・PayMe・銀行轉賬・現金（面談）<span class="tag-demo">示例</span></span></li>
+        <li><span class="bm-k">面談</span><span>港島區・確認預約後奉告地點；未便親臨可改視像或電話<span class="tag-demo">示例</span></span></li>
+        <li><span class="bm-k">回覆</span><span>一般 24 小時內經 Instagram 私訊回覆<span class="tag-demo">示例</span></span></li>
+      </ul>
       <div class="booking-cta reveal">
         <a class="btn btn-primary" href="https://www.instagram.com/touch_of_tao" target="_blank" rel="noopener">IG 私訊預約</a>
       </div>
@@ -1372,6 +1589,72 @@ html, body{
         <p>師兄行事，重「誠」與「直」——課象如何，便如何直說：吉則言吉，凶則言凶，不誇大、不渲染。玄學是輔助決斷的工具，助人看清時勢、趨吉避凶；路，始終要自己行。</p>
       </div>
       <p class="about-motto">「盡人事，聽天命——先盡人事。」</p>
+    </div>
+  </section>
+
+  <!-- 客人見證（示例） -->
+  <section class="band voices" id="voices" aria-labelledby="voices-title">
+    <div class="wrap">
+      <div class="reveal">
+        <p class="eyebrow">Client Voices · 見證</p>
+        <h2 id="voices-title">客人點講</h2>
+        <p class="cat-sub">以下為排版示例，並非真實客人評價；正式見證會在得到當事人同意後才刊出。</p>
+        <p class="demo-note"><span class="tag-demo">示例</span>下列內容純屬示例假數，方便你預覽排版。</p>
+      </div>
+      <ul class="voice-grid">
+        <li class="voice reveal" style="--i:0">
+          <p class="voice-q">一直拿不定主意轉唔轉工，起咗一課之後方向清晰咗好多。師兄講嘢直接、唔兜圈，聽完心裏面踏實。</p>
+          <div class="voice-foot"><span class="voice-who">陳小姐・港島</span><span class="voice-svc">大六壬問事</span></div>
+        </li>
+        <li class="voice reveal" style="--i:1">
+          <p class="voice-q">睇八字流年，該留意嘅位、該把握嘅時機都講得好仔細，唔係求其嚇你。事後翻睇筆記都好受用。</p>
+          <div class="voice-foot"><span class="voice-who">黃先生・九龍</span><span class="voice-svc">八字算命</span></div>
+        </li>
+        <li class="voice reveal" style="--i:2">
+          <p class="voice-q">搬屋前搵師兄睇玄空飛星，牀位、書枱、爐灶點擺都逐樣交代，仲畀埋佈局建議，住得安心好多。</p>
+          <div class="voice-foot"><span class="voice-who">Ms. Lo・視像</span><span class="voice-svc">玄空飛星</span></div>
+        </li>
+        <li class="voice reveal" style="--i:3">
+          <p class="voice-q">WhatsApp 問事都好快回覆，收費預先講清楚，冇隱藏收費。體驗好專業，會再搵。</p>
+          <div class="voice-foot"><span class="voice-who">阿 May・WhatsApp</span><span class="voice-svc">易經占卜</span></div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 常見問題 -->
+  <section class="band faq" id="faq" aria-labelledby="faq-title">
+    <div class="wrap">
+      <div class="reveal">
+        <p class="eyebrow">FAQ · 常見問題</p>
+        <h2 id="faq-title">常見問題</h2>
+      </div>
+      <div class="faq-list reveal">
+        <details class="faq-item">
+          <summary><span class="faq-n" aria-hidden="true">01</span>第一次搵師兄，點開始？</summary>
+          <p class="faq-a">經 Instagram 私訊 @touch_of_tao，講低想睇邊項服務、簡述所問之事。師兄回覆後同你夾好時間同形式（面談／視像／電話／文字），付款確認後就可以開始。</p>
+        </details>
+        <details class="faq-item">
+          <summary><span class="faq-n" aria-hidden="true">02</span>視像或電話問事，準唔準？</summary>
+          <p class="faq-a">大六壬、八字、易卦以你提供嘅資料同課象為本，唔受地域影響；面相可用清晰正面相片。形式唔影響準確度，揀你方便嘅就得。</p>
+        </details>
+        <details class="faq-item">
+          <summary><span class="faq-n" aria-hidden="true">03</span>收費點計？會唔會中途加價？</summary>
+          <p class="faq-a">每項服務明碼實價，預約前講清楚。法科、風水或按情況分級，會事先報價；一旦講好就唔會做到一半先加錢。</p>
+        </details>
+        <details class="faq-item">
+          <summary><span class="faq-n" aria-hidden="true">04</span>睇完之後，我會收到啲咩？</summary>
+          <p class="faq-a">問事、命理會即場詳細講解；符咒、法事按約定安排交付；風水會交代吉凶方位同佈局建議。如需跟進可另約。</p>
+        </details>
+        <details class="faq-item">
+          <summary><span class="faq-n" aria-hidden="true">05</span>我嘅個人資料，你哋點保密？</summary>
+          <p class="faq-a">你嘅生辰、住址、所問之事一律嚴格保密，只用於是次批算，唔會外傳或另作他用。</p>
+        </details>
+        <details class="faq-item">
+          <summary><span class="faq-n" aria-hidden="true">06</span>法科、改運，係咪一定靈？</summary>
+          <p class="faq-a">玄學是輔助決斷嘅工具，助你趨吉避凶；師兄據實而言，唔會保證必然結果。事在人為，路始終要自己行。</p>
+        </details>
+      </div>
     </div>
   </section>
 
